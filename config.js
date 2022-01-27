@@ -13,6 +13,6 @@ export const config = {
         dbPassword : securedKeys.DB_PASSWORD
     },
     host : {
-        host : Number(securedKeys.HOST)
+        host : Number(securedKeys.PORT)
     }
 };
