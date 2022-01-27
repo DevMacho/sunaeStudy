@@ -11,8 +11,5 @@ export const config = {
     },
     db : {
         dbPassword : securedKeys.DB_PASSWORD
-    },
-    host : {
-        host : Number(securedKeys.PORT)
     }
 };
