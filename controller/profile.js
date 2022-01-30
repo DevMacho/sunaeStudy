@@ -38,19 +38,6 @@ export async function editStudentId(req, res){
     })
 }
 
-export async function editPassword(req, res){
-    const { id, currentPassword, newPassword } = req.body;
-    const user = findUserById(id);
-    const isVaildPassword = await bcrypt.compare(currentPassword, user.password)
-    if(!isVaildPassword){
-        return req.status(401).json({message : "유효하지 않은 비밀번호입니다."});   
-    }
-    user.password = bcrypt.hash(newPassword, config.jwt.bcryptSaltRounds).then(() => {
-        user.save();
-        res.status(200).json({message : "성공적으로 비밀번호를 교체했습니다!"});
-    });
-}
-
 export async function editProfileImg(req, res){
     const { id, newProfileImg } = req.body;
     User.findOne({id})
