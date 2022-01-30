@@ -3,6 +3,7 @@
 import express from "express";
 import postRoute from './router/board.js';
 import authRoute from './router/auth.js';
+import profileRoute from "./router/profile.js";
 import cors from 'cors';
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(cors({
 
 app.use('/posts', postRoute);
 app.use('/auth', authRoute);
+app.use('/profile', profileRoute);
 
 app.use((req, res, next) => {
     res.sendStatus(404);
