@@ -8,7 +8,8 @@ import cors from 'cors';
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: '*'
+    origin: '*',
+    methods: ['GET','POST','DELETE','PUT']
 }));
 
 app.use('/posts', postRoute);
