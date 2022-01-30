@@ -1,3 +1,5 @@
+'use strict';
+
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import { config } from '../config.js';

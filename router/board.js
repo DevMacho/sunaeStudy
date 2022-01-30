@@ -1,3 +1,5 @@
+'use strict';
+
 import express from "express";
 import { body } from "express-validator";
 import * as postController from '../controller/post.js';

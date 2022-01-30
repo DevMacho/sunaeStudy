@@ -1,3 +1,5 @@
+'use strict';
+
 import jwt from 'jsonwebtoken';
 import * as userRepository from '../controller/auth.js';
 import { config } from '../config.js';

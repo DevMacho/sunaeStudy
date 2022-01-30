@@ -1,3 +1,5 @@
+'use strict';
+
 import { Post } from '../db/model.js'
 
 
