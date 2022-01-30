@@ -1,7 +1,7 @@
 'use strict';
 
 import express from "express";
-import { isAuth } from "../middleware/auth";
+import { isAuth } from "../middleware/auth.js";
 import * as profileController from '../controller/profile.js'
 
 const router = express.Router();
