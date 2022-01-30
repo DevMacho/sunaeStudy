@@ -8,7 +8,6 @@ import { User } from '../db/model.js';
 export async function viewProfile(req, res){
     const { id } = req.body;
     const user = await findUserById(id);
-    console.log(user)
     const returningProfile = {
         id : user.id,
         studentId : user.studentId,
