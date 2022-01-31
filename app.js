@@ -10,7 +10,8 @@ const app = express();
 app.use(express.json());
 app.use(cors({
     origin: '*',
-    methods: ['GET','POST','DELETE','PUT']
+    methods: ['GET','POST','DELETE','PUT'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use('/posts', postRoute);
