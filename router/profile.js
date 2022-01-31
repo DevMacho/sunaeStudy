@@ -6,7 +6,7 @@ import * as profileController from '../controller/profile.js'
 
 const router = express.Router();
 
-router.get('/profile', isAuth, profileController.viewProfile);
+router.post('/profile', isAuth, profileController.viewProfile);
 router.put('/editId', isAuth, profileController.editId);
 router.put('/editStudentId', isAuth, profileController.editStudentId);
 router.put('/editProfileImg', isAuth, profileController.editProfileImg);
