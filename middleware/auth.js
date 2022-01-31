@@ -11,7 +11,7 @@ const jwtSecretKey = config.jwt.jwtSecretKey;
 export async function isAuth(req, res, next){
     const authHeader = req.get('Authorization');
     if(!(authHeader && authHeader.startsWith('Bearer '))){
-        return res.status(401).json(AUTH_ERROR);
+        return res.status(401).json(AUTH_ERROR + "1");
     }
 
     const token = authHeader.split(' ')[1];
@@ -20,11 +20,11 @@ export async function isAuth(req, res, next){
         jwtSecretKey,
         async (error, decoded) => {
             if(error){
-                return res.status(401).json(AUTH_ERROR);
+                return res.status(401).json(AUTH_ERROR + "2");
             };
             const user = await userRepository.findUserById(decoded.id);
             if(!user){
-                return res.status(401).json(AUTH_ERROR);
+                return res.status(401).json(AUTH_ERROR + "3");
             }
             req.id = user.id;
             next();
