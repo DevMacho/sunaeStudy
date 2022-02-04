@@ -34,7 +34,6 @@ export async function signUp(req, res){
         password : hashedPassword,
         studentId,
         name,
-        email,
         schoolCard,
         profileIMG
     }

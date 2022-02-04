@@ -16,7 +16,6 @@ const validateLogIn = [
 
 const validateSignUp = [
     ...validateLogIn,
-    body('email').isEmail().normalizeEmail().withMessage('유효하지 않은 이메일입니다'),
     body('schoolCard').trim().notEmpty().withMessage('학생증을 첨부해야 합니다.'),
     body('name').trim().notEmpty().withMessage('이름을 작성해야 합니다.'),
     body('profileIMG').isURL().withMessage('유효하지 않은 이미지입니다.').optional({ nullable : true, checkFalsy : true}),
