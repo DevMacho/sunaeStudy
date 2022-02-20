@@ -22,7 +22,7 @@ export async function findUserById(id){
 }
 
 export async function signUp(req, res){
-    const { id, password, studentId, name, email, schoolCard, profileIMG } = req.body;
+    const { id, password, studentId, name, schoolCard, profileIMG } = req.body;
     const foundUser = await findUserById(id);
     if(foundUser){
         res.status(409).json({message : '이미 가입된 사용자입니다.'});
